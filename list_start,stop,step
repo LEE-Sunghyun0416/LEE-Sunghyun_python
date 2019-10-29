@@ -1,0 +1,53 @@
+def makeRandList():
+    import random
+    rl, sz, mx = [], random.randint(8, 15), 5**5
+    for i in range(sz):
+        rl.append(random.randint(-mx, mx))
+        rl[random.randint(0, i)] = random.choice(rl)
+
+    return rl
+        
+
+#rlist = makeRandList()
+#print('len(rlist) =', len(rlist))
+#print('rlist =', rlist) 
+
+#max = rlist[0]
+#for i in rlist:
+#    if(max < i):
+#        max = i
+
+
+#min = rlist[0]
+#for i in rlist:
+#    if(min > i):
+#        min = i
+
+#print('max = %d index = %d' %(max,rlist.index(max)))
+#print('min = %d index = %d' %(min, rlist.index(min)))
+
+start = int(input('start?'))
+stop = int(input('stop?'))
+step = int(input('step?'))
+
+
+myList=[]
+
+while True:
+    
+    if step == 0:
+        break
+    
+    if(start<stop):
+        mylist = list(range(start, stop, step))
+
+    else:
+        myList = []
+        print('My Range list = ', myList)
+
+        
+    myList = mylist
+    print('My Range list = ', myList)
+    start = int(input('start?'))
+    stop = int(input('stop?'))
+    step = int(input('step?'))
