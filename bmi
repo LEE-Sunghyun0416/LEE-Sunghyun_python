@@ -1,0 +1,18 @@
+print('*** BMI 계산기 ***')
+
+#bmi지수를 계산하기 위한 키와 몸무게를 입력 받는다.
+height = float(input('키(cm)? '))
+weight = float(input('몸무게(kg)? '))
+
+#키를 cm로 받았기 때문에 m로 전환한다.
+height = height * 0.01
+
+#bmi를 계산한다.
+#**는 제곱을 처리하는 연산자이다.
+bmi = weight / (height** 2) + 0.05
+print(bmi)
+
+#bmi를 소수점 둘째자리에서 반올림하여 출력한다.
+#print(bmi)를 출력하고 %.1f로 출력해보니 python에서는 자동으로
+#반올림을 처리해주는 것같아서 따로 반올림을 처리 안해줬다.
+print('BMI 지수는 %.1f 입니다.' % bmi)
