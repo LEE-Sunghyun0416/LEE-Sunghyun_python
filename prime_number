@@ -1,0 +1,21 @@
+print('*** 소수 만들기 ***')
+
+def prime(num):
+    cnt = 0;
+    for i in range(1,num+1):
+        if num % i == 0:
+            cnt+=1
+
+    if cnt == 2:
+        print('%d은/는 소수다' %num)
+    else:
+        print('%d은/는 소수가 아니다' %num)
+
+
+while True:
+    num = int(input('숫자? '))
+    if num == 0:
+        print('종료!')
+        break
+    else:
+        prime(num)
