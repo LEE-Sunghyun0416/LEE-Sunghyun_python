@@ -1,0 +1,42 @@
+print('*** 완전수 구하기 ***')
+
+#입력받은 숫자의 약수들을 저장하여 리턴하는 함수
+def perfectNum(num,lst):
+
+    #i가 1부터 num이전까지의 숫자를 돌면서
+    #num을 나누었을 때 나머지가 0이고 리스트 안에 없는
+    #i를 mylist에 추가한다.
+    for i in range(1,num):
+        if num%i == 0 and i not in mylist:
+            mylist.append(i)
+
+    return mylist
+
+
+#6이하의 숫자를 입력 받기 전까지 무한 루프를 돌게한다.
+while True:
+    num = int(input('숫자? '))
+    if num < 6:
+        print('종료!')
+        break
+    
+    mylist = []
+    perfectNum(num,mylist)
+
+    #함수에서 리턴 받은 리스트들의 합을 구하여 sum에 저장한다.
+    sum = 0
+    for i in range(0,len(mylist)):
+        sum += mylist[i]
+
+    #num과 sumdl 같으면 완전수로 출력
+    #num이 sum보다 작으면 과잉수로 출력
+    #num이 sum보다 크면 부족수로 출력한다.
+    print('진약수 리스트 = %s, 합계 = %d' %(mylist, sum))
+    if num == sum:
+        print('진약수 합계가 숫자와 같으므로 %d은/는 완전수다.' %num)
+
+    elif num < sum:
+        print('진약수 합계가 숫자보다 작으므로 %d은/는 과잉수다.' %num)
+
+    elif num > sum:
+        print('진약수 합계가 숫자보다 작으므로 %d은/는 부족수다.' %num)   
